@@ -1,0 +1,10 @@
+{
+  "train_samples": 1200,
+  "valid_samples": 400,
+  "train_unique_clean_labels": 20,
+  "valid_unique_clean_labels": 20,
+  "total_unique_labels": 20,
+  "signal_length": 80000,
+  "only_in_train_count": 0,
+  "only_in_valid_count": 0
+}
