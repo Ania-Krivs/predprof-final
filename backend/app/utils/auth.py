@@ -11,6 +11,13 @@ import jwt
 context_pass = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 
+def hash_password(password: str) -> str:
+    """
+    Хеширует пароль
+    """
+    return context_pass.hash(password)[:72]
+
+
 async def create_user(request: schemas.UserSchema):
     user_exists = await User.find_one(User.email == request.email)
     if user_exists:

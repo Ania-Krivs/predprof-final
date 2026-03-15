@@ -289,7 +289,7 @@ def main():
 
     callbacks = [
         keras.callbacks.ModelCheckpoint(
-            filepath=str(ARTIFACTS_DIR / "best_model.keras"),
+            filepath=str(ARTIFACTS_DIR / "model.h5"),
             monitor="val_accuracy",
             mode="max",
             save_best_only=True,

@@ -41,4 +41,4 @@ async def log_in_teacher(request: Annotated[OAuth2PasswordRequestForm, Depends()
     token_expires = timedelta(minutes=1440)
     token = await authenticate_user(data={"sub": request.username}, expires_delta=token_expires)
 
-    return schemas.Token(access_token=token, token_type="bearer")
+    return schemas.UserLogIn(access_token=token)
