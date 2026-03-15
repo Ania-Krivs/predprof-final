@@ -6,7 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 
 from app import MONGO_DSN, ENVIRONMENT, projectConfig
-from app.routers import system, auth, ml_work, admin, civilization
+from app.routers import system, auth, admin, civilization
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -38,7 +38,6 @@ api_router = APIRouter(prefix="/api")
 
 api_router.include_router(system.router)
 api_router.include_router(auth.router)
-api_router.include_router(ml_work.router)
 api_router.include_router(admin.router)
 api_router.include_router(civilization.router)
 app.include_router(api_router)
