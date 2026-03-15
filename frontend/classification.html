@@ -1,0 +1,60 @@
+﻿<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Классификация | PredProf IT</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <nav class="nav">
+        <a href="./profile.html">Профиль</a>
+        <a href="./classification.html">Классификация</a>
+        <a href="./analytics.html">Аналитика</a>
+        <a href="./register.html">Создать пользователя</a>
+      </nav>
+      <div class="row row-end" style="margin-bottom: 12px">
+        <button id="logoutBtn" class="secondary" style="max-width: 220px">Выйти</button>
+      </div>
+
+      <section class="card">
+        <h1>Классификация цивилизации по mp3</h1>
+        <form id="classificationForm">
+          <div class="form-row" style="max-width: 460px">
+            <label for="audio">Файл mp3</label>
+            <input id="audio" type="file" accept=".mp3,audio/mpeg" required />
+          </div>
+          <button id="submitBtn" type="submit" style="max-width: 360px">Запустить классификацию</button>
+          <div id="status" class="status"></div>
+        </form>
+      </section>
+
+      <section id="resultBox" class="card" hidden style="margin-top: 16px">
+        <h2>Результат</h2>
+        <div class="kpi">
+          <div class="item"><div class="label">Цивилизация</div><div class="value" id="civilization">-</div></div>
+          <div class="item"><div class="label">Уверенность</div><div class="value" id="confidence">-</div></div>
+          <div class="item"><div class="label">Class ID</div><div class="value" id="classId">-</div></div>
+        </div>
+
+        <h3 style="margin-top: 18px">Вероятности по всем классам</h3>
+        <div style="height: 320px"><canvas id="predictionsChart"></canvas></div>
+        <div class="row" style="margin: 10px 0 16px">
+          <button id="resetZoomBtn" type="button" class="secondary" style="max-width: 180px">Сбросить zoom</button>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Класс</th><th>Вероятность</th></tr></thead>
+            <tbody id="predictionsBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.2.0/dist/chartjs-plugin-zoom.min.js"></script>
+    <script type="module" src="./js/pages/classification.js"></script>
+  </body>
+</html>

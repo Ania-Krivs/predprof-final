@@ -1,0 +1,30 @@
+﻿<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Вход | PredProf IT</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <main class="container" style="max-width: 560px; padding-top: 70px">
+      <section class="card">
+        <h1>Авторизация</h1>
+        <p class="muted">Войдите в систему для доступа к классификации сигналов.</p>
+        <form id="loginForm">
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" type="email" required />
+          </div>
+          <div class="form-row">
+            <label for="password">Пароль</label>
+            <input id="password" type="password" required />
+          </div>
+          <button id="submitBtn" type="submit">Войти</button>
+          <div id="status" class="status"></div>
+        </form>
+      </section>
+    </main>
+    <script type="module" src="./js/pages/login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+﻿<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Аналитика | PredProf IT</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <nav class="nav">
+        <a href="./profile.html">Профиль</a>
+        <a href="./classification.html">Классификация</a>
+        <a href="./analytics.html">Аналитика</a>
+        <a href="./register.html">Создать пользователя</a>
+      </nav>
+      <div class="row row-end" style="margin-bottom: 12px">
+        <button id="logoutBtn" class="secondary" style="max-width: 220px">Выйти</button>
+      </div>
+
+      <section class="card" style="margin-bottom: 14px">
+        <h1>Аналитика модели</h1>
+        <div id="status" class="status"></div>
+      </section>
+
+      <section class="grid grid-2">
+        <article class="card">
+          <h3>Точность по эпохам</h3>
+          <div style="height: 280px"><canvas id="accuracyEpochsChart"></canvas></div>
+          <button id="resetZoom1" class="secondary" type="button" style="margin-top: 8px">Сбросить zoom</button>
+        </article>
+
+        <article class="card">
+          <h3>Train по классам</h3>
+          <div style="height: 280px"><canvas id="trainDistributionChart"></canvas></div>
+          <button id="resetZoom2" class="secondary" type="button" style="margin-top: 8px">Сбросить zoom</button>
+        </article>
+
+        <article class="card">
+          <h3>Точность по test-записям</h3>
+          <div style="height: 280px"><canvas id="testAccuracyChart"></canvas></div>
+          <button id="resetZoom3" class="secondary" type="button" style="margin-top: 8px">Сбросить zoom</button>
+        </article>
+
+        <article class="card">
+          <h3>Top-5 классов valid</h3>
+          <div style="height: 280px"><canvas id="topClassesChart"></canvas></div>
+          <button id="resetZoom4" class="secondary" type="button" style="margin-top: 8px">Сбросить zoom</button>
+        </article>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.2.0/dist/chartjs-plugin-zoom.min.js"></script>
+    <script type="module" src="./js/pages/analytics.js"></script>
+  </body>
+</html>

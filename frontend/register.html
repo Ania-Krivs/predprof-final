@@ -1,0 +1,54 @@
+﻿<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Создание пользователя | PredProf IT</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <nav class="nav">
+        <a href="./profile.html">Профиль</a>
+        <a href="./classification.html">Классификация</a>
+        <a href="./analytics.html">Аналитика</a>
+        <a href="./register.html">Создать пользователя</a>
+      </nav>
+      <div class="row row-end" style="margin-bottom: 12px">
+        <button id="logoutBtn" class="secondary" style="max-width: 220px">Выйти</button>
+      </div>
+
+      <section class="card" style="max-width: 700px">
+        <h1>Создание пользователя (Admin)</h1>
+        <form id="registerForm">
+          <div class="grid grid-2">
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input id="email" type="email" required />
+            </div>
+            <div class="form-row">
+              <label for="username">Username</label>
+              <input id="username" type="text" required />
+            </div>
+          </div>
+          <div class="grid grid-2">
+            <div class="form-row">
+              <label for="password">Пароль</label>
+              <input id="password" type="password" required />
+            </div>
+            <div class="form-row">
+              <label for="role">Роль</label>
+              <select id="role">
+                <option value="user">user</option>
+                <option value="admin">admin</option>
+              </select>
+            </div>
+          </div>
+          <button id="submitBtn" type="submit">Создать пользователя</button>
+          <div id="status" class="status"></div>
+        </form>
+      </section>
+    </main>
+    <script type="module" src="./js/pages/register.js"></script>
+  </body>
+</html>

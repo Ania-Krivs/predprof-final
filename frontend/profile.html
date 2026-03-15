@@ -1,0 +1,38 @@
+﻿<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Профиль | PredProf IT</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <nav class="nav">
+        <a href="./profile.html">Профиль</a>
+        <a href="./classification.html">Классификация</a>
+        <a href="./analytics.html">Аналитика</a>
+        <a href="./register.html">Создать пользователя</a>
+      </nav>
+      <div class="row row-end" style="margin-bottom: 12px">
+        <button id="logoutBtn" class="secondary" style="max-width: 220px">Выйти</button>
+      </div>
+
+      <section class="card" style="max-width: 760px">
+        <h1>Профиль пользователя</h1>
+        <div class="table-wrap">
+          <table>
+            <tbody>
+              <tr><th>Username</th><td id="username">-</td></tr>
+              <tr><th>Email</th><td id="email">-</td></tr>
+              <tr><th>Роль</th><td id="role">-</td></tr>
+              <tr><th>Disabled</th><td id="disabled">-</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="status" class="status"></div>
+      </section>
+    </main>
+    <script type="module" src="./js/pages/profile.js"></script>
+  </body>
+</html>
