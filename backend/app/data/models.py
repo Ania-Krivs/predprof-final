@@ -16,11 +16,8 @@ class AdminFront(Document):
 class User(Document):
     email: EmailStr = Field(json_schema_extra={"unique": True})
     hashed_password: str
-    first_name: str
-    last_name: str
+    username: str
     role: str = Field(default="user")
-    age: Optional[int] = Field(default=None)
-    gender: Optional[str] = Field(default=None)
     disabled: bool = Field(default=False)
     
 

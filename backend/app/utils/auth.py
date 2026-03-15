@@ -17,13 +17,10 @@ async def create_user(request: schemas.UserSchema):
         raise Error.LOGIN_EXISTS
     hashed_password = context_pass.hash(request.password)[:72]
     user = User(
-        first_name=request.first_name,
-        last_name=request.last_name,
+        username=request.username,
         hashed_password=hashed_password,
         email=request.email,
-        role=request.role,
-        age=request.age,
-        gender=request.gender
+        role=request.role
     )
     
     await user.create()
