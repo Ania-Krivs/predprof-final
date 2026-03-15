@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  fastapi:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - MONGO_DSN=mongodb://mongo:27017/predprof
+    depends_on:
+      - mongo
+    restart: unless-stopped
+    volumes:
+      - ./:/backend 
+    working_dir: /backend
+
+  mongo:
+    image: mongo:6
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    command: [--bind_ip_all]
+
+volumes:
+  mongo_data:
